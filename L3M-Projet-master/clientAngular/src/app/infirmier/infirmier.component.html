@@ -1,0 +1,43 @@
+<body>
+<div class="container">
+  <div class="container">
+  <h3 style="color: #72c2d6;">Patients affectés</h3>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+
+        <select #inf (change)="onClick1($event,inf.value)" #inf class="form-control" id="sel1">
+          <option selected>Infirmiers</option>
+          <option *ngFor="let infir of getinfirmiers()" value="{{infir.id}}">{{infir.nom+" "+infir.prenom}}</option>
+        </select>
+      </div>
+    </div>
+
+
+  </div>
+
+    <table class="table">
+      <thead class="thead" style="color: #72c2d6;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">numéro de sécurité sociale</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let pat of mypatient">
+        <td>
+          <input class="check"
+                 (click)="onClick($event)"
+                 type="checkbox" value="{{pat.numeroSecuriteSociale}}"/></td>
+        <td>{{pat.nom}}</td>
+        <td>{{pat.prenom}}</td>
+        <td>{{pat.adresse.rue}}</td>
+    </table>
+  </div>
+</div>
+
+</body>
+
+
+

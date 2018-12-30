@@ -1,0 +1,57 @@
+<div class="container" >
+  <div class="alert alert-success" role="alert" *ngIf="a">
+    <strong>Ajouté avec succes!</strong> le patient est ajouté.
+  </div>
+  <form #formCtrl="ngForm" (ngSubmit)="Addpatient(nom.value, prenom.value,sexe.value, numeroSecuriteSociale.value, rue.value, codepostal.value, ville.value, mero.value, etage.value, dd.value)">
+    <div class="row">
+      <div class="mat-expansion-panel-header-title">
+        <h4 class="title">Identité</h4>
+      </div>
+      <div class="input-group">
+        <div class="col-half">
+        <input #nom  type="text" name="nom" class="form-control" placeholder="Nom" required /> <br/>
+        <input #prenom type="text" name="prenom" class="form-control" placeholder="Prenom" required/><br/>
+        <input #numeroSecuriteSociale type="text" name="secu" class="form-control"  placeholder="1 269852 844" required/><br/>
+          <div  class="col-third">
+            <input #dd type="text" class="form-control" placeholder="DD"/>
+          </div>
+          <div class="col-third">
+            <input #mm type="text" class="form-control" placeholder="MM"/>
+          </div>
+          <div class="col-third">
+            <input #yy type="text" class="form-control" placeholder="YYYY"/>
+          </div>
+          <select #sexe class="form-control" [required]="true">
+            <option value ="" disabled selected>Gender</option>
+            <option id="gender-male"  value="M" >Homme</option>
+            <option id="gender-female"  value="F">Femme</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mat-expansion-panel-header-title">
+        <h4 class="title">Adresse</h4>
+      </div>
+        <div class="input-group ">
+          <div class="col-half">
+            <input #rue type="text" placeholder="rue" class="form-control"  required/><br/>
+            <input #mero type="text" placeholder="numero" class="form-control" required/><br/>
+            <input #etage type="text" placeholder="etage" class="form-control" required/><br/>
+            <input #codepostal name="postal"  class="form-control" type="text"  placeholder="code postal" required /><br/>
+            <input #ville type="text" name="ville" class="form-control"  placeholder="ville" required/><br/>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+    </div>
+    <div class="row">
+      <div class="input-group">
+        <button class="btn btn-primary" id="submit">Ajouter le patient</button>
+      </div>
+    </div>
+
+  </form>
+</div>

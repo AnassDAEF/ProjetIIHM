@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Collapsible sidebar using Bootstrap 4</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Font Awesome JS -->
+ </head>
+
+<body>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/logo.jpg" style="width:200px ; height: 150px"/>
+    </div>
+
+    <ul class="list-unstyled components">
+      <h5 style="text-align:center">Menu</h5>
+      <li class="active">
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Patients</a>
+      </li>
+      <li>
+        <a routerLink="/patient">Ajouter un patient</a>
+      </li>
+      <li class="active">
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profils</a>
+      </li>
+      <li>
+        <a routerLink="/infirmier"> Infirmier</a>
+      </li>
+      <li>
+        <a routerLink="/secretary">Secretaire</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content  -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li>
+              <a href="home/home.component.html">L3 MIAGE- Valence</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
+
+</body>
+
+</html>
